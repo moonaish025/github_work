@@ -11,8 +11,6 @@
         <link rel="stylesheet" href="css/qgis2web.css">
         <link rel="stylesheet" href="css/fontawesome-all.min.css">
         <link rel="stylesheet" href="css/leaflet-search.css">
-        <link rel="stylesheet" href="css/filter.css">
-<link rel="stylesheet" href="css/nouislider.min.css">
         <link rel="stylesheet" href="css/leaflet-measure.css">
         <style>
         html, body, #map {
@@ -39,9 +37,6 @@
         <script src="js/labels.js"></script>
         <script src="js/leaflet-measure.js"></script>
         <script src="js/leaflet-search.js"></script>
-        <script src="js/tailDT.js"></script>
-<script src="js/nouislider.min.js"></script>
-<script src="js/wNumb.js"></script>
         <script src="data/Population_2.js"></script>
         <script src="data/Services_3.js"></script>
         <script src="data/Distancetoservice_4.js"></script>
@@ -65,7 +60,7 @@
         }
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
-        }).fitBounds([[-6.183839092186477,39.185249091167684],[-6.1552598558395175,39.221560526376045]]);
+        }).fitBounds([[-6.168069719628754,39.190752083833566],[-6.139485521479885,39.237696398835574]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -188,8 +183,7 @@
                         <td class="visible-with-data" id="ward_name_">' + (feature.properties['ward_name_'] !== null ? autolinker.link(String(feature.properties['ward_name_']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">population</th>\
-                        <td class="visible-with-data" id="population">' + (feature.properties['population'] !== null ? autolinker.link(String(feature.properties['population']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>population</strong><br />' + (feature.properties['population'] !== null ? autolinker.link(String(feature.properties['population']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -1436,7 +1430,7 @@
             {label: 'Services<br /><table><tr><td style="text-align: center;"><img src="legend/Services_3_comissionforlands0.png" /></td><td>comission for lands</td></tr><tr><td style="text-align: center;"><img src="legend/Services_3_dispensary1.png" /></td><td>dispensary</td></tr><tr><td style="text-align: center;"><img src="legend/Services_3_flyinghorseticketoffice2.png" /></td><td>flying horse ticket office</td></tr><tr><td style="text-align: center;"><img src="legend/Services_3_hospital3.png" /></td><td>hospital</td></tr><tr><td style="text-align: center;"><img src="legend/Services_3_hospitals4.png" /></td><td>hospitals</td></tr><tr><td style="text-align: center;"><img src="legend/Services_3_policestation5.png" /></td><td>police station</td></tr><tr><td style="text-align: center;"><img src="legend/Services_3_school6.png" /></td><td>school</td></tr><tr><td style="text-align: center;"><img src="legend/Services_3_university7.png" /></td><td>university</td></tr><tr><td style="text-align: center;"><img src="legend/Services_3_utility8.png" /></td><td>utility</td></tr><tr><td style="text-align: center;"><img src="legend/Services_3_9.png" /></td><td></td></tr></table>', layer: layer_Services_3},
             {label: 'Population<br /><table><tr><td style="text-align: center;"><img src="legend/Population_2_134400.png" /></td><td>1344.0</td></tr><tr><td style="text-align: center;"><img src="legend/Population_2_135301.png" /></td><td>1353.0</td></tr><tr><td style="text-align: center;"><img src="legend/Population_2_135352.png" /></td><td>1353.5</td></tr><tr><td style="text-align: center;"><img src="legend/Population_2_1357623.png" /></td><td>13576.2</td></tr><tr><td style="text-align: center;"><img src="legend/Population_2_161704.png" /></td><td>1617.0</td></tr><tr><td style="text-align: center;"><img src="legend/Population_2_165105.png" /></td><td>1651.0</td></tr><tr><td style="text-align: center;"><img src="legend/Population_2_183906.png" /></td><td>1839.0</td></tr><tr><td style="text-align: center;"><img src="legend/Population_2_185307.png" /></td><td>1853.0</td></tr><tr><td style="text-align: center;"><img src="legend/Population_2_186108.png" /></td><td>1861.0</td></tr><tr><td style="text-align: center;"><img src="legend/Population_2_199809.png" /></td><td>1998.0</td></tr><tr><td style="text-align: center;"><img src="legend/Population_2_2057010.png" /></td><td>2057.0</td></tr><tr><td style="text-align: center;"><img src="legend/Population_2_2129011.png" /></td><td>2129.0</td></tr><tr><td style="text-align: center;"><img src="legend/Population_2_2251012.png" /></td><td>2251.0</td></tr><tr><td style="text-align: center;"><img src="legend/Population_2_2307013.png" /></td><td>2307.0</td></tr><tr><td style="text-align: center;"><img src="legend/Population_2_2337014.png" /></td><td>2337.0</td></tr><tr><td style="text-align: center;"><img src="legend/Population_2_2342015.png" /></td><td>2342.0</td></tr><tr><td style="text-align: center;"><img src="legend/Population_2_2356016.png" /></td><td>2356.0</td></tr><tr><td style="text-align: center;"><img src="legend/Population_2_2376017.png" /></td><td>2376.0</td></tr><tr><td style="text-align: center;"><img src="legend/Population_2_2380018.png" /></td><td>2380.0</td></tr><tr><td style="text-align: center;"><img src="legend/Population_2_2400019.png" /></td><td>2400.0</td></tr><tr><td style="text-align: center;"><img src="legend/Population_2_2446020.png" /></td><td>2446.0</td></tr><tr><td style="text-align: center;"><img src="legend/Population_2_2534021.png" /></td><td>2534.0</td></tr><tr><td style="text-align: center;"><img src="legend/Population_2_2557022.png" /></td><td>2557.0</td></tr><tr><td style="text-align: center;"><img src="legend/Population_2_2559023.png" /></td><td>2559.0</td></tr><tr><td style="text-align: center;"><img src="legend/Population_2_2782024.png" /></td><td>2782.0</td></tr><tr><td style="text-align: center;"><img src="legend/Population_2_2800025.png" /></td><td>2800.0</td></tr><tr><td style="text-align: center;"><img src="legend/Population_2_2826026.png" /></td><td>2826.0</td></tr><tr><td style="text-align: center;"><img src="legend/Population_2_3055027.png" /></td><td>3055.0</td></tr><tr><td style="text-align: center;"><img src="legend/Population_2_3398028.png" /></td><td>3398.0</td></tr><tr><td style="text-align: center;"><img src="legend/Population_2_3697029.png" /></td><td>3697.0</td></tr><tr><td style="text-align: center;"><img src="legend/Population_2_3758030.png" /></td><td>3758.0</td></tr><tr><td style="text-align: center;"><img src="legend/Population_2_3872031.png" /></td><td>3872.0</td></tr><tr><td style="text-align: center;"><img src="legend/Population_2_4164032.png" /></td><td>4164.0</td></tr><tr><td style="text-align: center;"><img src="legend/Population_2_4404033.png" /></td><td>4404.0</td></tr><tr><td style="text-align: center;"><img src="legend/Population_2_4488034.png" /></td><td>4488.0</td></tr><tr><td style="text-align: center;"><img src="legend/Population_2_4711035.png" /></td><td>4711.0</td></tr><tr><td style="text-align: center;"><img src="legend/Population_2_4723036.png" /></td><td>4723.0</td></tr><tr><td style="text-align: center;"><img src="legend/Population_2_4726037.png" /></td><td>4726.0</td></tr><tr><td style="text-align: center;"><img src="legend/Population_2_4745038.png" /></td><td>4745.0</td></tr><tr><td style="text-align: center;"><img src="legend/Population_2_4810039.png" /></td><td>4810.0</td></tr><tr><td style="text-align: center;"><img src="legend/Population_2_4898040.png" /></td><td>4898.0</td></tr><tr><td style="text-align: center;"><img src="legend/Population_2_4988041.png" /></td><td>4988.0</td></tr><tr><td style="text-align: center;"><img src="legend/Population_2_5280042.png" /></td><td>5280.0</td></tr><tr><td style="text-align: center;"><img src="legend/Population_2_5597043.png" /></td><td>5597.0</td></tr><tr><td style="text-align: center;"><img src="legend/Population_2_5890044.png" /></td><td>5890.0</td></tr><tr><td style="text-align: center;"><img src="legend/Population_2_6039045.png" /></td><td>6039.0</td></tr><tr><td style="text-align: center;"><img src="legend/Population_2_6113046.png" /></td><td>6113.0</td></tr><tr><td style="text-align: center;"><img src="legend/Population_2_6456047.png" /></td><td>6456.0</td></tr><tr><td style="text-align: center;"><img src="legend/Population_2_6503048.png" /></td><td>6503.0</td></tr><tr><td style="text-align: center;"><img src="legend/Population_2_6867049.png" /></td><td>6867.0</td></tr><tr><td style="text-align: center;"><img src="legend/Population_2_7016050.png" /></td><td>7016.0</td></tr><tr><td style="text-align: center;"><img src="legend/Population_2_7226051.png" /></td><td>7226.0</td></tr><tr><td style="text-align: center;"><img src="legend/Population_2_7363052.png" /></td><td>7363.0</td></tr><tr><td style="text-align: center;"><img src="legend/Population_2_7920053.png" /></td><td>7920.0</td></tr><tr><td style="text-align: center;"><img src="legend/Population_2_8541054.png" /></td><td>8541.0</td></tr><tr><td style="text-align: center;"><img src="legend/Population_2_8822055.png" /></td><td>8822.0</td></tr><tr><td style="text-align: center;"><img src="legend/Population_2_56.png" /></td><td></td></tr></table>', layer: layer_Population_2},
             {label: "OSM Standard", layer: layer_OSMStandard_1},
-            {label: "OSM Standard", layer: layer_OSMStandard_0},]
+            {label: "OSM Standard", layer: layer_OSMStandard_0, radioGroup: 'bm' },]
         var lay = L.control.layers.tree(null, overlaysTree,{
             //namedToggle: true,
             //selectorBack: false,
@@ -1455,182 +1449,6 @@
             propertyName: 'Use'}));
         document.getElementsByClassName('search-button')[0].className +=
          ' fa fa-binoculars';
-        var mapDiv = document.getElementById('map');
-        var row = document.createElement('div');
-        row.className="row";
-        row.id="all";
-        row.style.height = "100%";
-        var col1 = document.createElement('div');
-        col1.className="col9";
-        col1.id = "mapWindow";
-        col1.style.height = "99%";
-        col1.style.width = "80%";
-        col1.style.display = "inline-block";
-        var col2 = document.createElement('div');
-        col2.className="col3";
-        col2.id = "menu";
-        col2.style.display = "inline-block";
-        mapDiv.parentNode.insertBefore(row, mapDiv);
-        document.getElementById("all").appendChild(col1);
-        document.getElementById("all").appendChild(col2);
-        col1.appendChild(mapDiv)
-        var Filters = {"HubDist": "real","HubName": "str"};
-        function filterFunc() {
-          map.eachLayer(function(lyr){
-          if ("options" in lyr && "dataVar" in lyr["options"]){
-            features = this[lyr["options"]["dataVar"]].features.slice(0);
-            try{
-              for (key in Filters){
-                keyS = key.replace(/[^a-zA-Z0-9_]/g, "")
-                if (Filters[key] == "str" || Filters[key] == "bool"){
-                  var selection = [];
-                  var options = document.getElementById("sel_" + keyS).options
-                  for (var i=0; i < options.length; i++) {
-                    if (options[i].selected) selection.push(options[i].value);
-                  }
-                    try{
-                      if (key in features[0].properties){
-                        for (i = features.length - 1;
-                          i >= 0; --i){
-                          if (selection.indexOf(
-                          features[i].properties[key])<0
-                          && selection.length>0) {
-                          features.splice(i,1);
-                          }
-                        }
-                      }
-                    } catch(err){
-                  }
-                }
-                if (Filters[key] == "int"){
-                  sliderVals =  document.getElementById(
-                    "div_" + keyS).noUiSlider.get();
-                  try{
-                    if (key in features[0].properties){
-                    for (i = features.length - 1; i >= 0; --i){
-                      if (parseInt(features[i].properties[key])
-                          < sliderVals[0]
-                          || parseInt(features[i].properties[key])
-                          > sliderVals[1]){
-                            features.splice(i,1);
-                          }
-                        }
-                      }
-                    } catch(err){
-                    }
-                  }
-                if (Filters[key] == "real"){
-                  sliderVals =  document.getElementById(
-                    "div_" + keyS).noUiSlider.get();
-                  try{
-                    if (key in features[0].properties){
-                    for (i = features.length - 1; i >= 0; --i){
-                      if (features[i].properties[key]
-                          < sliderVals[0]
-                          || features[i].properties[key]
-                          > sliderVals[1]){
-                            features.splice(i,1);
-                          }
-                        }
-                      }
-                    } catch(err){
-                    }
-                  }
-                if (Filters[key] == "date"
-                  || Filters[key] == "datetime"
-                  || Filters[key] == "time"){
-                  try{
-                    if (key in features[0].properties){
-                      HTMLkey = key.replace(/[&\/\\#,+()$~%.'":*?<>{} ]/g, '');
-                      startdate = document.getElementById("dat_" +
-                        HTMLkey + "_date1").value.replace(" ", "T");
-                      enddate = document.getElementById("dat_" +
-                        HTMLkey + "_date2").value.replace(" ", "T");
-                      for (i = features.length - 1; i >= 0; --i){
-                        if (features[i].properties[key] < startdate
-                          || features[i].properties[key] > enddate){
-                          features.splice(i,1);
-                        }
-                      }
-                    }
-                  } catch(err){
-                  }
-                }
-              }
-            } catch(err){
-            }
-          this[lyr["options"]["layerName"]].clearLayers();
-          this[lyr["options"]["layerName"]].addData(features);
-          }
-          })
-        }
-            document.getElementById("menu").appendChild(
-                document.createElement("div"));
-            var div_HubDist = document.createElement("div");
-            div_HubDist.id = "div_HubDist";
-            div_HubDist.className = "slider";
-            document.getElementById("menu").appendChild(div_HubDist);
-            var lab_HubDist = document.createElement('div');
-            lab_HubDist.innerHTML  = 'HubDist: <span id="val_HubDist"></span>';
-            lab_HubDist.className = 'filterlabel';
-            document.getElementById("menu").appendChild(lab_HubDist);
-            var reset_HubDist = document.createElement('div');
-            reset_HubDist.innerHTML = 'clear filter';
-            reset_HubDist.className = 'filterlabel';
-            lab_HubDist.className = 'filterlabel';
-            reset_HubDist.onclick = function() {
-                sel_HubDist.noUiSlider.reset();
-            };
-            document.getElementById("menu").appendChild(reset_HubDist);
-            var sel_HubDist = document.getElementById('div_HubDist');
-            noUiSlider.create(sel_HubDist, {
-                connect: true,
-                start: [0.032211357611351, 0.994552884795503],
-                range: {
-                min: 0.032211357611351,
-                max: 0.994552884795503
-                }
-            });
-            sel_HubDist.noUiSlider.on('update', function (values) {
-            val_HubDist = document.getElementById('val_HubDist');
-            val_HubDist.innerHTML = values.join(' - ');
-                filterFunc()
-            });
-            document.getElementById("menu").appendChild(
-                document.createElement("div"));
-            var div_HubName = document.createElement('div');
-            div_HubName.id = "div_HubName";
-            div_HubName.className= "filterselect";
-            document.getElementById("menu").appendChild(div_HubName);
-            sel_HubName = document.createElement('select');
-            sel_HubName.multiple = true;
-            sel_HubName.size = 6;
-            sel_HubName.id = "sel_HubName";
-            var HubName_options_str = "<option value='' unselected></option>";
-            sel_HubName.onchange = function(){filterFunc()};
-            HubName_options_str  += '<option value="comission for lands">comission for lands</option>';
-            HubName_options_str  += '<option value="hospital">hospital</option>';
-            HubName_options_str  += '<option value="hospitals">hospitals</option>';
-            HubName_options_str  += '<option value="police station">police station</option>';
-            HubName_options_str  += '<option value="school">school</option>';
-            HubName_options_str  += '<option value="utility">utility</option>';
-            sel_HubName.innerHTML = HubName_options_str;
-            div_HubName.appendChild(sel_HubName);
-            var lab_HubName = document.createElement('div');
-            lab_HubName.innerHTML = 'HubName';
-            lab_HubName.className = 'filterlabel';
-            div_HubName.appendChild(lab_HubName);
-            var reset_HubName = document.createElement('div');
-            reset_HubName.innerHTML = 'clear filter';
-            reset_HubName.className = 'filterlabel';
-            reset_HubName.onclick = function() {
-                var options = document.getElementById("sel_HubName").options;
-                for (var i=0; i < options.length; i++) {
-                    options[i].selected = false;
-                }
-                filterFunc();
-            };
-            div_HubName.appendChild(reset_HubName);
         </script>
     </body>
 </html>
